@@ -1,8 +1,5 @@
 # 📘 Machine Learning Chapter 1
 
-Ini adalah jawaban dari latihan di **Chapter 1: The Machine Learning Landscape** berdasarkan buku  
-🎓 *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* oleh Aurélien Géron.
-
 ---
 
 ## 📚 Exercises dan Jawaban
@@ -69,3 +66,58 @@ Ini adalah jawaban dari latihan di **Chapter 1: The Machine Learning Landscape**
 > **Instance-Based Learning**, seperti algoritma **K-Nearest Neighbors (KNN)**, yang memprediksi berdasarkan kemiripan dengan data sebelumnya.
 
 ---
+
+### 12. What is the difference between a model parameter and a learning algorithm’s hyperparameter?
+> - **Parameter model** adalah nilai internal yang dipelajari oleh model selama proses training (contoh: koefisien dalam regresi linear).
+> - **Hyperparameter** adalah parameter yang ditentukan sebelum proses training dan mengatur cara kerja algoritma (contoh: jumlah pohon dalam random forest, atau nilai C dalam SVM).
+
+---
+
+### 13. What do model-based learning algorithms search for? What is the most common strategy they use to succeed? How do they make predictions?
+> Algoritma pembelajaran berbasis model berusaha menemukan parameter model terbaik untuk meminimalkan fungsi kesalahan (loss function).  
+> Strategi yang umum digunakan adalah **optimasi fungsi biaya** (seperti menggunakan gradient descent).  
+> Setelah model dilatih, prediksi dilakukan dengan memberikan data input ke fungsi model tersebut.
+
+---
+
+### 14. Can you name four of the main challenges in Machine Learning?
+> - **Data tidak mencukupi** (insufficient data)
+> - **Data tidak representatif** (sampling bias)
+> - **Data berkualitas buruk** (missing values, outliers, noise)
+> - **Overfitting** dan **Underfitting** model
+
+---
+
+### 15. If your model performs great on the training data but generalizes poorly to new instances, what is happening? Can you name three possible solutions?
+> Ini adalah kasus **overfitting**: model terlalu cocok dengan data training.  
+> Tiga solusi yang dapat dilakukan:
+> - Gunakan model yang lebih sederhana atau regularisasi model
+> - Tambah ukuran dataset (lebih banyak data training)
+> - Bersihkan data dari noise atau fitur yang tidak relevan
+
+---
+
+### 16. What is a test set, and why would you want to use it?
+> Test set adalah data yang digunakan untuk **mengukur performa akhir model** setelah training selesai.  
+> Tujuannya adalah untuk mengevaluasi seberapa baik model mampu menggeneralisasi ke data baru yang belum pernah dilihat.
+
+---
+
+### 17. What is the purpose of a validation set?
+> Validation set digunakan untuk membandingkan performa berbagai model atau konfigurasi hyperparameter.  
+> Ini memungkinkan kita untuk memilih model terbaik **tanpa menyentuh test set**.
+
+---
+
+### 18. What is the train-dev set, when do you need it, and how do you use it?
+> Train-dev set adalah subset dari data training yang digunakan untuk mengecek apakah model **overfitting pada data training** atau **gagal generalisasi** ke data yang mirip.  
+> Digunakan ketika validation set dan test set memiliki karakteristik berbeda dari data training.
+
+---
+
+### 19. What can go wrong if you tune hyperparameters using the test set?
+> Jika test set digunakan dalam tuning hyperparameter, maka model akan “belajar” dari test set, dan skor akhirnya menjadi bias.  
+> Artinya, **estimasi performa pada test set menjadi terlalu optimis** dan tidak mencerminkan performa sebenarnya di dunia nyata.
+
+---
+
